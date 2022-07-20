@@ -1,0 +1,13 @@
+incomingrequest;addNews;2022-07-20T00:16:59+0530;2022-07-20T00:16:59+0530;1658256419066;1658256419066;india;;;Unknown;289;{
+    "id":"1",
+    "headLine":"testHeadline",
+    "tags":"eduction,learning",
+    "content":"testContent",
+    "imageIds":"img1,img2",
+    "metaData":"testMetaData",
+    "categoryId":"testCategoryId",
+    "geoLocationId":"testGeoId",
+    "status":"active",
+    "newsType":"breakingNews"
+};0;true;null;true
+server-start;addNews;2022-07-20T00:16:59+0530;2022-07-20T00:16:59+0530;1658256419066;1658256419760;india;;;Unknown;289;/news/addNews;694;true;null; 

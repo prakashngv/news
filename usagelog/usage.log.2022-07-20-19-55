@@ -1,0 +1,14 @@
+incomingrequest;addNews;2022-07-20T19:55:27+0530;2022-07-20T19:55:27+0530;1658327127598;1658327127598;india;;;Unknown;235;{
+    "news":
+    {
+        "id":"1",
+        "headLine":"test",
+        "tags":"test",
+        "content":"test",
+        "imageIds":"test",
+        "metaData":"test",
+        "categoryId":"test",
+        "geoLocationId":"test"
+    }
+};0;true;null;true
+server-start;addNews;2022-07-20T19:55:27+0530;2022-07-20T19:55:28+0530;1658327127598;1658327128992;india;;;Unknown;235;/news/addNews;1394;true;null; 

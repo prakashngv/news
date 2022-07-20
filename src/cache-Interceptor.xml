@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+
+    
+    <bean id="mysqlDatabaseInterceptor" class="com.kisszo.news.netty.mysql.MysqlDatabaseManger"/>
+    <aop:config>
+        <aop:aspect ref="mysqlDatabaseInterceptor">
+            <aop:pointcut id="mysqldatabasePoint" expression="@annotation(com.kisszo.news.netty.mysql.MysqlDatabase)"/>
+            <aop:around pointcut-ref="mysqldatabasePoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+    
+    <bean id="mySqlTranformDBObject" class="com.kisszo.news.netty.mysql.MysqlTransFormDBObject"/>
+    <aop:config>
+        <aop:aspect ref="mySqlTranformDBObject">
+            <aop:pointcut id="mySqlTranformDBObjectPoint" expression="@annotation(com.kisszo.news.netty.mysql.MySqlTransform)"/>
+            <aop:around pointcut-ref="mySqlTranformDBObjectPoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+    
+     <bean id="mysqlUpdateTransformOject" class="com.kisszo.news.netty.mysql.MysqlUpdateTransformOject"/>
+    <aop:config>
+        <aop:aspect ref="mysqlUpdateTransformOject">
+            <aop:pointcut id="MysqlUpdatePoint" expression="@annotation(com.kisszo.news.netty.mysql.MysqlUpdate)"/>
+            <aop:around pointcut-ref="MysqlUpdatePoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+    
+     <bean id="mysqlDeleteTransformObject" class="com.kisszo.news.netty.mysql.MysqlDeleteTransformObject"/>
+    <aop:config>
+        <aop:aspect ref="mysqlDeleteTransformObject">
+            <aop:pointcut id="MysqlDeletePoint" expression="@annotation(com.kisszo.news.netty.mysql.MysqlDelete)"/>
+            <aop:around pointcut-ref="MysqlDeletePoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+    
+    <bean id="mysqlBatchTransformObject" class="com.kisszo.news.netty.mysql.MySqlBacthTransformObject"/>
+    <aop:config>
+        <aop:aspect ref="mysqlBatchTransformObject">
+            <aop:pointcut id="MysqlBatchPoint" expression="@annotation(com.kisszo.news.netty.mysql.MySqlBatch)"/>
+            <aop:around pointcut-ref="MysqlBatchPoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+    
+</beans>

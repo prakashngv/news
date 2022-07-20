@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Built-By: miosalon
+Build-Jdk: 16.0.2
+Class-Path: pherialize-1.2.1.jar netty-all-4.1.32.Final.jar gson-2.2.2.j
+ ar log4j-api-2.16.0.jar log4j-core-2.16.0.jar slf4j-api-1.7.24.jar slf4
+ j-log4j12-1.7.7.jar log4j-1.2.17.jar commons-beanutils-1.9.2.jar common
+ s-logging-1.1.1.jar commons-collections-3.2.1.jar UserAgentUtils-1.5.ja
+ r commons-codec-1.6.jar spring-aop-4.3.2.RELEASE.jar spring-aspects-4.3
+ .2.RELEASE.jar spring-beans-4.3.2.RELEASE.jar spring-context-4.3.2.RELE
+ ASE.jar spring-context-support-4.3.2.RELEASE.jar spring-core-4.3.2.RELE
+ ASE.jar spring-expression-4.3.2.RELEASE.jar spring-instrument-4.3.2.REL
+ EASE.jar spring-instrument-tomcat-4.3.2.RELEASE.jar spring-jdbc-4.3.2.R
+ ELEASE.jar spring-jms-4.3.2.RELEASE.jar spring-messaging-4.3.2.RELEASE.
+ jar spring-orm-4.3.2.RELEASE.jar spring-oxm-4.3.2.RELEASE.jar spring-te
+ st-4.3.2.RELEASE.jar spring-tx-4.3.2.RELEASE.jar spring-web-4.3.2.RELEA
+ SE.jar spring-webmvc-4.3.2.RELEASE.jar spring-webmvc-portlet-4.3.2.RELE
+ ASE.jar jettison-1.3.3.jar stax-api-1.0.1.jar jackson-annotations-2.6.0
+ .jar jackson-core-2.6.6.jar jackson-databind-2.6.6.jar jackson-dataform
+ at-cbor-2.6.6.jar java-uuid-generator-3.1.4.jar groovy-all-2.4.7.jar as
+ pectjrt-1.6.6.jar aspectjweaver-1.6.8.jar org.apache.commons.dbcp-org.a
+ pache.commons.dbcp.jar org.apache.commons.pool-org.apache.commons.pool.
+ jar mysql-connector-java-8.0.29.jar protobuf-java-3.19.4.jar
+Main-Class: com.kisszo.news.netty.http.HttpSnoopServer
+Created-By: Maven Integration for Eclipse
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+    
+    <bean id="cacheInterceptor" class="com.waffor.netty.cache.CacheManager"/>
+    <aop:config>
+        <aop:aspect ref="cacheInterceptor">
+            <aop:pointcut id="cacheQueryPoint" expression="@annotation(com.waffor.netty.cache.Cache)"/>
+            <aop:around pointcut-ref="cacheQueryPoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+    
+    <bean id="cacheBuilderInterceptor" class="com.waffor.netty.cache.CacheBuilderManager"/>
+    <aop:config>
+        <aop:aspect ref="cacheBuilderInterceptor">
+            <aop:pointcut id="cacheBuilderPoint" expression="@annotation(com.waffor.netty.cache.CacheBuilder)"/>
+            <aop:around pointcut-ref="cacheBuilderPoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+	
+
+    
+    <bean id="mysqlDatabaseInterceptor" class="com.waffor.netty.mysql.MysqlDatabaseManger"/>
+    <aop:config>
+        <aop:aspect ref="mysqlDatabaseInterceptor">
+            <aop:pointcut id="mysqldatabasePoint" expression="@annotation(com.waffor.netty.mysql.MysqlDatabase)"/>
+            <aop:around pointcut-ref="mysqldatabasePoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+
+	
+	<bean id="authenticateInterceptor" class="com.waffor.netty.manager.AuthenticationHandler"/>
+    <aop:config>
+        <aop:aspect ref="authenticateInterceptor">
+            <aop:pointcut id="authenticatePoint" expression="@annotation(com.waffor.netty.manager.Authenticate)"/>
+            <aop:around pointcut-ref="authenticatePoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+    
+    <bean id="mySqlTranformDBObject" class="com.waffor.netty.mysql.MysqlTransFormDBObject"/>
+    <aop:config>
+        <aop:aspect ref="mySqlTranformDBObject">
+            <aop:pointcut id="mySqlTranformDBObjectPoint" expression="@annotation(com.waffor.netty.mysql.MySqlTransform)"/>
+            <aop:around pointcut-ref="mySqlTranformDBObjectPoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+    
+     <bean id="mysqlUpdateTransformOject" class="com.waffor.netty.mysql.MysqlUpdateTransformOject"/>
+    <aop:config>
+        <aop:aspect ref="mysqlUpdateTransformOject">
+            <aop:pointcut id="MysqlUpdatePoint" expression="@annotation(com.waffor.netty.mysql.MysqlUpdate)"/>
+            <aop:around pointcut-ref="MysqlUpdatePoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+    
+     <bean id="mysqlDeleteTransformObject" class="com.waffor.netty.mysql.MysqlDeleteTransformObject"/>
+    <aop:config>
+        <aop:aspect ref="mysqlDeleteTransformObject">
+            <aop:pointcut id="MysqlDeletePoint" expression="@annotation(com.waffor.netty.mysql.MysqlDelete)"/>
+            <aop:around pointcut-ref="MysqlDeletePoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+    
+    <bean id="mysqlBatchTransformObject" class="com.waffor.netty.mysql.MySqlBacthTransformObject"/>
+    <aop:config>
+        <aop:aspect ref="mysqlBatchTransformObject">
+            <aop:pointcut id="MysqlBatchPoint" expression="@annotation(com.waffor.netty.mysql.MySqlBatch)"/>
+            <aop:around pointcut-ref="MysqlBatchPoint" method="handleTransaction"/>
+        </aop:aspect>
+    </aop:config>
+    
+</beans>

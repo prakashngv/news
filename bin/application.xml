@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    
+    <bean id="expenseUseCase" class="com.miosalon.expense.usecase.ExpenseUseCase"/>
+    <bean id="cashRegistryUseCase" class="com.miosalon.expense.usecase.CashRegistryUseCase"/>
+    <bean id="voucherUseCase" class="com.miosalon.voucher.VoucherUseCase"/>
+    <bean id="commonUsecase" class="com.miosalon.voucher.CommonUsecase"/>
+    <bean id="loyaltyOfferUseCase" class="com.miosalon.expense.usecase.LoyaltyOfferUseCase"/>
+    <bean id="attendanceUseCase" class="com.miosalon.expense.usecase.AttendanceUseCase"/>
+	
+	<bean id="expenseSvc" class="com.miosalon.expense.bl.ExpenseSvc"/>
+	<bean id="cashRegistrySvc" class="com.miosalon.expense.bl.CashRegistrySvc"/>
+	<bean id="voucherSvc" class="com.miosalon.voucher.VoucherSvc"/>
+	<bean id="commonSvc" class="com.miosalon.voucher.CommonSvc"/>
+	<bean id="loyaltyOfferSvc" class="com.miosalon.expense.bl.LoyaltyOfferSvc"/>
+	<bean id="attendanceSvc" class="com.miosalon.expense.bl.AttendanceSvc"/>
+	
+	<bean id="expenseDao" class="com.miosalon.expense.dao.ExpenseDao"/>
+	<bean id="cashRegistryDao" class="com.miosalon.expense.dao.CashRegistryDao"/>
+	<bean id="voucherDao" class="com.miosalon.voucher.VoucherDao"/>
+	<bean id="loyaltyOfferDao" class="com.miosalon.expense.dao.LoyaltyOfferDao"/>
+	<bean id="attendanceDao" class="com.miosalon.expense.dao.AttendanceDao"/>
+</beans>

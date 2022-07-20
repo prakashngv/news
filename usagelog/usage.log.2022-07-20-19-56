@@ -1,0 +1,17 @@
+incomingrequest;addNews;2022-07-20T19:56:17+0530;2022-07-20T19:56:17+0530;1658327177751;1658327177751;india;;;Unknown;289;{
+    "news":
+    {
+        "id":"1",
+        "headLine":"test",
+        "tags":"test",
+        "content":"test",
+        "imageIds":"test",
+        "metaData":"test",
+        "categoryId":"test",
+        "geoLocationId":"test",
+        "status":"active",
+        "newsType":"news"
+    }
+};0;true;null;true
+writemysql;addNews/invoke/addNews/;2022-07-20T19:56:17+0530;2022-07-20T19:56:17+0530;1658327177816;1658327177831; ; ; ; ; ; ;15;true; ;true
+server-start;addNews;2022-07-20T19:56:17+0530;2022-07-20T19:56:17+0530;1658327177751;1658327177908;india;;;Unknown;289;/news/addNews;157;true;null;success
