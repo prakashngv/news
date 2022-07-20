@@ -36,10 +36,11 @@ public class NewsAction extends BaseAction{
 	
 	
 	@Path(path="/addNews")
-	public String addNews() throws ClassNotFoundException, SQLException, KisszoException{
+	public String addNews() throws ClassNotFoundException, SQLException {
 		NewsUseCase newsUseCase = ApiManager.getInstance().getNewsUseCase();
 		String response = newsUseCase.addNews(bean);
 		return response;
 	}
+	
 	
 }
