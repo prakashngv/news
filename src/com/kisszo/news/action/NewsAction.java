@@ -39,8 +39,7 @@ public class NewsAction extends BaseAction{
 	public String addNews() throws ClassNotFoundException, SQLException {
 		NewsUseCase newsUseCase = ApiManager.getInstance().getNewsUseCase();
 		String response = newsUseCase.addNews(bean);
+		//test
 		return response;
 	}
-	
-	
 }
